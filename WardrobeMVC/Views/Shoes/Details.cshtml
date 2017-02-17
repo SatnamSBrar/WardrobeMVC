@@ -7,11 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Sho</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ShoeName)
+            @Html.LabelFor(model => model.ShoeImage, "Image")
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(modelItem => Model.ShoeImage)" class="img-responsive thumbnail-image" />
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.ShoeName, "Name")
         </dt>
 
         <dd>
@@ -19,15 +25,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ShoeImage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShoeImage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color.ColorName)
+            @Html.LabelFor(model => model.Color.ColorName, "Color")
         </dt>
 
         <dd>
@@ -35,7 +33,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Occasion.OccasionName)
+            @Html.LabelFor(model => model.Occasion.OccasionName, "Occasion")
         </dt>
 
         <dd>
@@ -43,7 +41,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Season.SeasonName)
+            @Html.LabelFor(model => model.Season.SeasonName, "Season")
         </dt>
 
         <dd>
@@ -51,16 +49,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ShoeType.ShoeTypeName)
+            @Html.LabelFor(model => model.ShoeType.ShoeTypeName, "Type")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ShoeType.ShoeTypeName)
         </dd>
 
+        <dt>
+            @Html.LabelFor(model => model.ShoeImage, "Image Link")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoeImage)
+        </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ShoeID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Shoes")'">Back to List</button>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShoeID }, new { @class = "btn btn-info", role = "button" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ShoeID }, new { @class = "btn btn-info", role = "button" })
+</div>

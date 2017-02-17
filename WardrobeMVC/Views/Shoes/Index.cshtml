@@ -4,60 +4,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Shoes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+@*CREATE NEW TOP*@
+<p class="new-item">
+    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Shoes")'">New Shoes</button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ShoeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShoeImage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color.ColorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion.OccasionName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season.SeasonName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShoeType.ShoeTypeName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShoeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShoeImage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color.ColorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion.OccasionName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season.SeasonName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShoeType.ShoeTypeName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ShoeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ShoeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ShoeID })
-        </td>
-    </tr>
-}
+@*ROW CONTAINING SHOES INFORMATION*@
+<div class="row">
+    @*LOOP THAT IS ABLE TO HANDLE NEW SHOES ADDITIONS*@
+    @foreach (var item in Model)
+    {
+        @*SHOES*@
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <div class="caption">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>@Html.DisplayFor(modelItem => item.ShoeName)</h4>
+                            <p><img src="@Html.DisplayFor(modelItem => item.ShoeImage)" class="img-responsive image" /></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
+                            <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            @*BUTTONS FOR DETAILS AND EDIT*@
+                            <p>@Html.ActionLink("Details", "Details", new { id = item.ShoeID }, new { @class = "btn btn-info", role = "button" })</p>
+                            <p>@Html.ActionLink("Edit", "Edit", new { id = item.ShoeID }, new { @class = "btn btn-info", role = "button" })</p>
+                        </div>
+                    </div>
 
-</table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
