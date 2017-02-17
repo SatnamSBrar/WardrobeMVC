@@ -40,9 +40,6 @@ namespace WardrobeMVC.Controllers
         // GET: Tops/Create
         public ActionResult Create()
         {
-            //CREATING IMAGE
-            ViewBag.TopImage = 
-
             ViewBag.ColorID = new SelectList(db.Colors, "ColorID", "ColorName");
             ViewBag.OccasionID = new SelectList(db.Occasions, "OccasionID", "OccasionName");
             ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonID", "SeasonName");
@@ -57,13 +54,19 @@ namespace WardrobeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TopID,TopName,TopTypeID,ColorID,SeasonID,OccasionID,TopImage")] Top top)
         {
+            //bypasses error if no input in image link input editor
+            if (top.TopImage == null)
+            {
+                top.TopImage = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+            }
+
             if (ModelState.IsValid)
             {
                 db.Tops.Add(top);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
             ViewBag.ColorID = new SelectList(db.Colors, "ColorID", "ColorName", top.ColorID);
             ViewBag.OccasionID = new SelectList(db.Occasions, "OccasionID", "OccasionName", top.OccasionID);
             ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonID", "SeasonName", top.SeasonID);
