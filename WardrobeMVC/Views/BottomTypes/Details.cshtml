@@ -1,0 +1,26 @@
+﻿@model WardrobeMVC.Models.BottomType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BottomType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BottomTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottomTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BottomTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
