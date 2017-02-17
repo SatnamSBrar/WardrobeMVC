@@ -4,12 +4,49 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tops</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+@*CREATE NEW TOP*@
+<p class="new-review">
+    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Tops")'">Store a New Top</button>
 </p>
-<table class="table">
+
+@*ROW CONTAINING TOP INFORMATION*@
+<div class="row">
+    @*LOOP THAT IS ABLE TO HANDLE NEW TOP ADDITIONS*@
+    @foreach (var item in Model)
+    {
+        @*TOP*@
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="thumbnail">
+                <div class="caption">
+                    <div class="col-md-6">
+                        <h4>@Html.DisplayFor(modelItem => item.TopName)</h4>
+                        <p><img src="@Html.DisplayFor(modelItem => item.TopImage)" class="img-repsonsive" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
+                        <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
+                        <p>Type:&nbsp;<span>@Html.DisplayFor(modelItem => item.TopType.TopTypeName)</span></p>
+                        <p>Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.Color.ColorName)</span></p>
+                    </div>
+                    @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
+                    <p>
+                        @Html.ActionLink("Details", "Details", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TopName)
@@ -60,4 +97,4 @@
     </tr>
 }
 
-</table>
+</table>*@

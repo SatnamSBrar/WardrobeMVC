@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -39,6 +40,9 @@ namespace WardrobeMVC.Controllers
         // GET: Tops/Create
         public ActionResult Create()
         {
+            //CREATING IMAGE
+            ViewBag.TopImage = 
+
             ViewBag.ColorID = new SelectList(db.Colors, "ColorID", "ColorName");
             ViewBag.OccasionID = new SelectList(db.Occasions, "OccasionID", "OccasionName");
             ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonID", "SeasonName");
