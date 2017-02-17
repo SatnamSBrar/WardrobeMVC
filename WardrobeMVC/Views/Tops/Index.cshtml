@@ -34,10 +34,9 @@
                             <p>Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.Color.ColorName)</span></p>
                         </div>
                         <div class="col-md-6">
-                            @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
+                            @*BUTTONS FOR DETAILS AND EDIT*@
                             <p>@Html.ActionLink("Details", "Details", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
                             <p>@Html.ActionLink("Edit", "Edit", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
-                            <p>@Html.ActionLink("Delete", "Delete", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
                         </div>
                     </div>
                     

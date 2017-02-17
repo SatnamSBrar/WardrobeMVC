@@ -7,11 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Top</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TopName)
+            @Html.LabelFor(model => model.TopImage, "Image")
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(modelItem => Model.TopImage)" class="img-responsive thumbnail-image" />
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.TopName, "Name")
         </dt>
 
         <dd>
@@ -19,15 +25,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TopImage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopImage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color.ColorName)
+            @Html.LabelFor(model => model.Color.ColorName, "Color")
         </dt>
 
         <dd>
@@ -35,7 +33,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Occasion.OccasionName)
+            @Html.LabelFor(model => model.Occasion.OccasionName, "Occasion")
         </dt>
 
         <dd>
@@ -43,7 +41,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Season.SeasonName)
+            @Html.LabelFor(model => model.Season.SeasonName, "Season")
         </dt>
 
         <dd>
@@ -51,16 +49,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TopType.TopTypeName)
+            @Html.LabelFor(model => model.TopType.TopTypeName, "Type")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.TopType.TopTypeName)
         </dd>
 
+        <dt>
+            @Html.LabelFor(model => model.TopImage, "Image Link")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopImage)
+        </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TopID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Tops")'">Back to List</button>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TopID }, new { @class = "btn btn-info", role = "button" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.TopID }, new { @class = "btn btn-info", role = "button" })
+</div>
