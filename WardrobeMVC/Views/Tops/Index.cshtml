@@ -17,25 +17,30 @@
     @foreach (var item in Model)
     {
         @*TOP*@
-        <div class="col-xs-10 col-sm-10 col-md-10">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="thumbnail">
                 <div class="caption">
-                    <div class="col-md-6">
-                        <h4>@Html.DisplayFor(modelItem => item.TopName)</h4>
-                        <p><img src="@Html.DisplayFor(modelItem => item.TopImage)" class="img-repsonsive" /></p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>@Html.DisplayFor(modelItem => item.TopName)</h4>
+                            <p><img src="@Html.DisplayFor(modelItem => item.TopImage)" class="img-responsive image" /></p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
-                        <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
-                        <p>Type:&nbsp;<span>@Html.DisplayFor(modelItem => item.TopType.TopTypeName)</span></p>
-                        <p>Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.Color.ColorName)</span></p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
+                            <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
+                            <p>Type:&nbsp;<span>@Html.DisplayFor(modelItem => item.TopType.TopTypeName)</span></p>
+                            <p>Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.Color.ColorName)</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
+                            <p>@Html.ActionLink("Details", "Details", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
+                            <p>@Html.ActionLink("Edit", "Edit", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
+                            <p>@Html.ActionLink("Delete", "Delete", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })</p>
+                        </div>
                     </div>
-                    @*BUTTONS FOR DETAILS, EDIT, AND DELETE*@
-                    <p>
-                        @Html.ActionLink("Details", "Details", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
-                        @Html.ActionLink("Edit", "Edit", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.TopID }, new { @class = "btn btn-info", role = "button" })
-                    </p>
+                    
                 </div>
             </div>
         </div>
