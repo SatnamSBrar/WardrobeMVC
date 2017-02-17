@@ -53,6 +53,12 @@ namespace WardrobeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "BottomID,BottomName,BottomTypeID,ColorID,SeasonID,OccasionID,BottomImage")] Bottom bottom)
         {
+            //bypasses error if no input in image link input editor
+            if (bottom.BottomImage == null)
+            {
+                bottom.BottomImage = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+            }
+
             if (ModelState.IsValid)
             {
                 db.Bottoms.Add(bottom);

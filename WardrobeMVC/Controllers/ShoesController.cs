@@ -53,6 +53,12 @@ namespace WardrobeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ShoeID,ShoeName,ShoeTypeID,ColorID,SeasonID,OccasionID,ShoeImage")] Sho sho)
         {
+            //bypasses error if no input in image link input editor
+            if (sho.ShoeImage == null)
+            {
+                sho.ShoeImage = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+            }
+
             if (ModelState.IsValid)
             {
                 db.Shoes.Add(sho);

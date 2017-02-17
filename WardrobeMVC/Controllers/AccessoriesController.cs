@@ -53,6 +53,12 @@ namespace WardrobeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AccessoryID,AccessoryName,AccessoryTypeID,ColorID,SeasonID,OccasionID,AccessoryImage")] Accessory accessory)
         {
+            //bypasses error if no input in image link input editor
+            if (accessory.AccessoryImage == null)
+            {
+                accessory.AccessoryImage = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+            }
+
             if (ModelState.IsValid)
             {
                 db.Accessories.Add(accessory);
