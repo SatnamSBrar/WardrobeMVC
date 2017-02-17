@@ -8,7 +8,7 @@
 
 @*CREATE NEW TOP*@
 <p class="new-review">
-    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Tops")'">Store a New Top</button>
+    <button type="button" class="btn btn-info create-new" onclick="location.href='@Url.Action("Create", "Tops")'">New Top</button>
 </p>
 
 @*ROW CONTAINING TOP INFORMATION*@
@@ -30,8 +30,6 @@
                         <div class="col-md-6">
                             <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
                             <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
-                            <p>Type:&nbsp;<span>@Html.DisplayFor(modelItem => item.TopType.TopTypeName)</span></p>
-                            <p>Color:&nbsp;<span>@Html.DisplayFor(modelItem => item.Color.ColorName)</span></p>
                         </div>
                         <div class="col-md-6">
                             @*BUTTONS FOR DETAILS AND EDIT*@
