@@ -8,11 +8,9 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Accessory</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AccessoryName)
+            @Html.LabelFor(model => model.AccessoryName, "Name")
         </dt>
 
         <dd>
@@ -20,23 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AccessoryImage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryImage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessoryType.AccessoryTypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryType.AccessoryTypeName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color.ColorName)
+            @Html.LabelFor(model => model.Color.ColorName, "Color")
         </dt>
 
         <dd>
@@ -44,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Occasion.OccasionName)
+            @Html.LabelFor(model => model.Occasion.OccasionName, "Occasion")
         </dt>
 
         <dd>
@@ -52,21 +34,38 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Season.SeasonName)
+            @Html.LabelFor(model => model.Season.SeasonName, "Season")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Season.SeasonName)
         </dd>
 
+        <dt>
+            @Html.LabelFor(model => model.AccessoryType.AccessoryTypeName, "Type")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessoryType.AccessoryTypeName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.AccessoryImage, "Image Link")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessoryImage)
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-info" />
+            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Accessories")'">Back to List</button>
         </div>
     }
 </div>
