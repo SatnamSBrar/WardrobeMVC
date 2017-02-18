@@ -253,6 +253,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Wardrobe.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="images\dark-red-370119_1280.png" />
+    <Content Include="images\fabric_plaid_%402X.png" />
+    <Content Include="images\leather_texture4689.jpg" />
     <Content Include="Models\Wardrobe.edmx.diagram">
       <DependentUpon>Wardrobe.edmx</DependentUpon>
     </Content>
@@ -361,7 +364,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

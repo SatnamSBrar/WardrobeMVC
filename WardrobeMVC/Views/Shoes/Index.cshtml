@@ -17,7 +17,7 @@
     @foreach (var item in Model)
     {
         @*SHOES*@
-        <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
                     <div class="row">
@@ -27,14 +27,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 description">
                             <p>Occasion:&nbsp;<span>@Html.DisplayFor(modelItem => item.Occasion.OccasionName)</span></p>
                             <p>Season:&nbsp;<span>@Html.DisplayFor(modelItem => item.Season.SeasonName)</span></p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 buttons">
                             @*BUTTONS FOR DETAILS AND EDIT*@
-                            <p>@Html.ActionLink("Details", "Details", new { id = item.ShoeID }, new { @class = "btn btn-info", role = "button" })</p>
-                            <p>@Html.ActionLink("Edit", "Edit", new { id = item.ShoeID }, new { @class = "btn btn-info", role = "button" })</p>
+                            <p>@Html.ActionLink("Details", "Details", new { id = item.ShoeID }, new { @class = "btn btn-info index", role = "button" })</p>
+                            <p>@Html.ActionLink("Edit", "Edit", new { id = item.ShoeID }, new { @class = "btn btn-info index", role = "button" })</p>
                         </div>
                     </div>
 

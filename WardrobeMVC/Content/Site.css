@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    color:rgb(0,0,0);
+    background-image: url('../images/fabric_plaid_@2X.png');
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +24,105 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*BUTTONS*/
+.btn {
+    background-image: url('../images/dark-red-370119_1280.png');
+    border-color:rgb(0,0,0);
+}
+/*NAVBAR*/
+.navbar .container {
+    height:50px;
+}
+.navbar-inverse {
+    background-image: url('../images/dark-red-370119_1280.png');
+    border-color: rgb(120,0,0);
+}
+.navbar-inverse .navbar-brand {
+    color:white;
+    font-family: 'Vast Shadow', cursive;
+    font-size:40px;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    margin-left:-88.625px;  /*SUBTRACTS SIZE OF NAVBAR-HEADER TO ENSURE CENTERED POSITION*/
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+.navbar-fixed-top .navbar-collapse {
+    max-height:50px;
+}
+.navbar-inverse .navbar-nav li a {
+    color:white;
+}
+/*NAVBAR BUTTON*/
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color:rgb(0,0,0);
+}
+.navbar-collapse {
+    background-image: url('../images/dark-red-370119_1280.png');
+}
+.navbar-fixed-top .navbar-collapse.collapse.in {
+    max-height: unset;
+}
+button.navbar-toggle {
+    border-color:rgb(0,0,0);
+    background-image: url('../images/fabric_plaid_@2X.png');
+    color:rgb(0,0,0);
+}
+.navbar-inverse .navbar-toggle:hover{
+    border-color:rgb(0,0,0);
+    background-image: url('../images/fabric_plaid_@2X.png');
+    color:rgb(0,0,0);
+}
+.navbar-inverse .navbar-toggle:focus {
+    border-color:rgb(0,0,0);
+    background-image: url('../images/fabric_plaid_@2X.png');
+    color:rgb(0,0,0);
+}
+
+/*CREATE NEW BUTTON*/
+.new-item {
+    text-align:center;
+}
+.btn.create-new {
+    margin-bottom:20px;
+    font-size:20px;
+    padding-right:100px;
+    padding-left:100px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+/*INDEX VIEWS*/
+.thumbnail {
+    border-radius: 0px;
+    border-image-source:url('../images/dark-red-370119_1280.png');
+    border-image-slice: 20;
+    border-image-width: 20;
+    border-image-outset:15px;
+  }
+}
+.thumbnail .caption {
+    color:rgb(0,0,0);
+}
+.image {
+    max-height:250px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.description {
+    font-size:larger;
+    text-align:center;
+}
+.buttons {
+    text-align:center;
+}
+.btn.btn-info.index {
+    width:100px;
+    height:1.55em;
+    padding:0;
+    margin:0;
 }
