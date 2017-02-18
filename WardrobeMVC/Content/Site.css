@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
     font-family: 'Josefin Sans', sans-serif;
     color:rgb(0,0,0);
@@ -52,7 +52,7 @@ textarea {
 .navbar .navbar-collapse {
     text-align: center;
 }
-.navbar-fixed-top .navbar-collapse {
+.navbar-static-top .navbar-collapse {
     max-height:50px;
 }
 .navbar-inverse .navbar-nav li a {
@@ -65,7 +65,7 @@ textarea {
 .navbar-collapse {
     background-image: url('../images/dark-red-370119_1280.png');
 }
-.navbar-fixed-top .navbar-collapse.collapse.in {
+.navbar-static-top .navbar-collapse.collapse.in {
     max-height: unset;
 }
 button.navbar-toggle {
