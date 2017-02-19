@@ -91,6 +91,7 @@ button.navbar-toggle {
 .btn.create-new {
     margin-bottom:20px;
     font-size:20px;
+    font-weight:bold;
     padding-right:100px;
     padding-left:100px;
     padding-top:20px;
@@ -113,9 +114,35 @@ button.navbar-toggle {
     margin-left:auto;
     margin-right:auto;
 }
+.outfit-items {
+    text-align:center;
+}
+.outfitImage {
+    max-height:200px;
+    padding:0;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    border:0;
+}
+.accessoryImage {
+    max-height:100px;
+    padding:0;
+    margin:auto;
+    border:0;
+}
+.image-to-bottom img{
+    vertical-align: baseline;
+    border:0;
+    float:none;
+}
+.img-responsive {
+    display:inline-block;
+}
 .description {
     font-size:larger;
-    text-align:center;
+    text-align:left;
 }
 .buttons {
     text-align:center;
