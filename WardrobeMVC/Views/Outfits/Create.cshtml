@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Outfit</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,11 +12,9 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Outfit</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.TopID, "TopID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TopID, "Top", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("TopID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TopID, "", new { @class = "text-danger" })
@@ -24,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BottomID, "BottomID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BottomID, "Bottom", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("BottomID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BottomID, "", new { @class = "text-danger" })
@@ -32,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ShoeID, "ShoeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ShoeID, "Shoes", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ShoeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShoeID, "", new { @class = "text-danger" })
@@ -40,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AccessoryID, "AccessoryID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AccessoryID, "Accessory", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("AccessoryID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AccessoryID, "", new { @class = "text-danger" })
@@ -49,15 +47,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-info" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*GO BACK TO LIST*@
+<p>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Outfits")'">Back to List</button>
+</p>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

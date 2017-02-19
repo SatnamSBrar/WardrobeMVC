@@ -8,19 +8,18 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Outfit</h4>
-    <hr />
     <dl class="dl-horizontal">
+        
         <dt>
-            @Html.DisplayNameFor(model => model.Accessory.AccessoryName)
+            @Html.LabelFor(model => model.Top.TopName, "Top")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Accessory.AccessoryName)
+            @Html.DisplayFor(model => model.Top.TopName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bottom.BottomName)
+            @Html.LabelFor(model => model.Bottom.BottomName, "Bottom")
         </dt>
 
         <dd>
@@ -28,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sho.ShoeName)
+            @Html.LabelFor(model => model.Sho.ShoeName, "Shoes")
         </dt>
 
         <dd>
@@ -36,11 +35,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Top.TopName)
+            @Html.LabelFor(model => model.Accessory.AccessoryName, "Accessory")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Top.TopName)
+            @Html.DisplayFor(model => model.Accessory.AccessoryName)
         </dd>
 
     </dl>
@@ -49,8 +48,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-info" />
+            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Outfits")'">Back to List</button>
         </div>
     }
 </div>

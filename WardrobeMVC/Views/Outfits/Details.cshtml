@@ -7,19 +7,18 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Outfit</h4>
-    <hr />
     <dl class="dl-horizontal">
+        
         <dt>
-            @Html.DisplayNameFor(model => model.Accessory.AccessoryName)
+            @Html.LabelFor(model => model.Top.TopName, "Top")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Accessory.AccessoryName)
+            @Html.DisplayFor(model => model.Top.TopName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bottom.BottomName)
+            @Html.LabelFor(model => model.Bottom.BottomName, "Bottom")
         </dt>
 
         <dd>
@@ -27,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sho.ShoeName)
+            @Html.LabelFor(model => model.Sho.ShoeName, "Shoes")
         </dt>
 
         <dd>
@@ -35,16 +34,17 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Top.TopName)
+            @Html.LabelFor(model => model.Accessory.AccessoryName, "Accessory")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Top.TopName)
+            @Html.DisplayFor(model => model.Accessory.AccessoryName)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.OutfitID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Outfits")'">Back to List</button>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OutfitID }, new { @class = "btn btn-info", role = "button" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.OutfitID }, new { @class = "btn btn-info", role = "button" })
+</div>
