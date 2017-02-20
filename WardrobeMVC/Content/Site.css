@@ -99,6 +99,7 @@ textarea {
     }
     .navbar-collapse.collapse {
         display: none!important;
+        width:100%;
     }
     .navbar-nav {
         float: none!important;
@@ -116,10 +117,11 @@ textarea {
     }
     .navbar-text {
         float: none;
+        margin: 15px 0;
     }
-    /* since 3.1.0 */
     .navbar-collapse.collapse.in { 
         display: block!important;
+        width:100%;
     }
     .collapsing {
         overflow: hidden!important;
