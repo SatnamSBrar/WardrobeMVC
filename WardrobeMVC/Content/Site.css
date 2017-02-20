@@ -52,14 +52,19 @@ textarea {
     font-size: 40px;
 }
     /*Change navbar-brand size when screen becomes smaller (ipad, mobile)*/
-@media (max-width:414px) {
-    .navbar-inverse .navbar-brand {
-        font-size:20px;
-    }
-}
 @media (max-width:768px) {
     .navbar-inverse .navbar-brand {
         font-size:30px;
+    }
+}
+@media (max-width:414px) {
+    .navbar-inverse .navbar-brand {
+        font-size:30px;
+    }
+}
+@media (max-width:375px) {
+    .navbar-inverse .navbar-brand {
+        font-size:20px;
     }
 }
 .navbar .navbar-nav {
@@ -69,6 +74,7 @@ textarea {
 }
 .navbar .navbar-collapse {
     text-align: right;
+    background:none;
 }
 .navbar-static-top .navbar-collapse {
     max-height:50px;
