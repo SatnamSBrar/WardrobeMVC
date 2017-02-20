@@ -98,12 +98,12 @@ button.navbar-toggle {
     padding-bottom:20px;
 }
 /*INDEX VIEWS*/
+.items {
+    background-image:url('../images/dark-red-370119_1280.png');
+    border-radius:10px;
+}
 .thumbnail {
-    border-radius: 0px;
-    border-image-source:url('../images/dark-red-370119_1280.png');
-    border-image-slice: 20;
-    border-image-width: 20;
-    border-image-outset:15px;
+    border-color:none;
 }
 .thumbnail .caption {
     color:rgb(0,0,0);
@@ -141,7 +141,6 @@ button.navbar-toggle {
     border:0;
 }
 .description {
-    font-size:larger;
     text-align:left;
 }
 .buttons {
@@ -152,4 +151,8 @@ button.navbar-toggle {
     height:1.55em;
     padding:0;
     margin:0;
+}
+footer {
+    font-size:8px;
+    font-style:italic;
 }
