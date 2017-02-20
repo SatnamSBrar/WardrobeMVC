@@ -49,15 +49,26 @@ textarea {
 .navbar-inverse .navbar-brand {
     color:white;
     font-family: 'Vast Shadow', cursive;
-    font-size:40px;
+    font-size: 40px;
+}
+    /*Change navbar-brand size when screen becomes smaller (ipad, mobile)*/
+@media (max-width:414px) {
+    .navbar-inverse .navbar-brand {
+        font-size:20px;
+    }
+}
+@media (max-width:768px) {
+    .navbar-inverse .navbar-brand {
+        font-size:30px;
+    }
 }
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
-    margin-left:-88.625px;  /*SUBTRACTS SIZE OF NAVBAR-HEADER TO ENSURE CENTERED POSITION*/
+    margin-left:-388.78px;  /*SUBTRACTS SIZE OF NAVBAR-HEADER TO ENSURE PROPER POSITION*/
 }
 .navbar .navbar-collapse {
-    text-align: center;
+    text-align: right;
 }
 .navbar-static-top .navbar-collapse {
     max-height:50px;
