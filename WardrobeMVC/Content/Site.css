@@ -25,6 +25,13 @@ select,
 textarea {
     max-width: 280px;
 }
+/*HOME INDEX VIEW*/
+.jumbotron {
+    background:none;
+}
+.btn.jumbo {
+    width:100%;
+}
 
 /*BUTTONS*/
 .btn {
