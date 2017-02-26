@@ -1,3 +1,4 @@
-SB Wardrobe is a web app that allows users to add tops, bottoms, shoes, and accessories to their online collection.
-
-The user is then able to pick outfits using the items added to their collection.
+This website was created using ASP.NET and MVC. SQL database is used to organize 
+models for tops, bottoms, shoes, and accessories. SB Wardrobe offered a feature of 
+uploading photographs of clothing items to store in the database, and then to use 
+the stored items to generate custom outfits.
